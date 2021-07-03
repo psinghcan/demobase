@@ -8,9 +8,6 @@
   <h:form>
   <p:menu>
     <p:submenu label="#{messages.menu_pages}">
-      
-      <p:menuitem value="#{messages.menu_productExamples}" outcome="/pages/productExample/productExample.xhtml" icon="icon-entity" ajax="false" async="false" />
-      
     </p:submenu>
     
     <p:submenu label="#{messages.menu_admin}" rendered="#{p:ifGranted('Administrator')}">

@@ -26,11 +26,7 @@ public class SecurityWrapper implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private static final Logger logger = Logger.getLogger(SecurityWrapper.class.getName());
-    
-    // Because Shiro does not support public permissions, we need to workaround them:
-    private static final Set<String> publicPermissions = 
-            new HashSet<>(Arrays.asList(new String[]{"productExample:create" ,"productExample:read" ,"productExample:update" ,"productExample:delete" ,"productExample:create" ,"productExample:read" ,"productExample:update" ,"productExample:delete" ,"productExample:create" ,"productExample:read" ,"productExample:update" ,"productExample:delete"}));
-    
+
     public static boolean login(String username, String password, boolean rememberMe) {
         try {
             SecurityUtils.getSubject().login(new UsernamePasswordToken(username, password, rememberMe));
@@ -55,8 +51,7 @@ public class SecurityWrapper implements Serializable {
     }
     
     public static boolean isPermitted(String permission) {
-        return publicPermissions.contains(permission)
-                || SecurityUtils.getSubject().isPermitted(permission);
+        return false;
     }
 
     public static boolean hasReadPermissionOnlyOwner(String entity) {
