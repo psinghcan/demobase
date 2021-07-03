@@ -1,0 +1,16 @@
+Instructions to run Demobase on Payara Micro without any Application Server installation.
+
+======================================================================================================
+1. Prerequisites
+
+  You need to have JDK and Maven installed properly.
+
+2. Download "Payara Micro 193" or newer release from http://www.payara.fish/downloads
+
+3. Build the project by executing the command "mvn package" within the generated "Demobase" directory.
+
+4. Start the application with command "java -jar payara-micro-5.193.jar --deploy target/Demobase.war --noCluster"
+   Check if the "payara-micro-x.x.x.x.jar" matches the actual path and name of the Payara Micro jar and adapt the command if necessary.
+   Note: You should use the --noCluster option because of the PrimeFaces issue 1570 (https://github.com/primefaces/primefaces/issues/1570). Clustering will be available with PrimeFaces 6.1.
+
+5. After the application is deployed successfully, start it in your browser with http://localhost:8080/Demobase
