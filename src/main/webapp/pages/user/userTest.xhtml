@@ -1,31 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
->
-<f:view>
-    <h:outputLabel value="Hello, user of this app"/>
-<!--    <h:panelGrid columns="3" styleClass="dialog" columnClasses="col1,col2,col3">-->
-<!--        <h:outputText value="#{messages.field_label_user_username}:" />-->
-<!--        <h:outputText value="#{userBean.user.username}" />-->
-<!--        <h:outputText value="" />-->
-
-<!--        <h:outputText value="#{messages.field_label_user_email}:" />-->
-<!--        <h:outputText value="#{userBean.user.email}" />-->
-<!--        <h:outputText value="" />-->
-
-<!--        <h:outputText value="#{messages.field_label_user_roles}:" />-->
-<!--        <p:outputPanel>-->
-<!--            <ui:repeat value="#{userBean.user.roles}" var="role">-->
-<!--                <h:outputText value="#{role}" /><br/>-->
-<!--            </ui:repeat>-->
-<!--        </p:outputPanel>-->
-<!--        <h:outputText value="" />-->
-
-<!--    </h:panelGrid>-->
-</f:view>
+      xmlns:p="http://primefaces.org/ui">
+<h:head></h:head>
+<p:accordionPanel>
+    <p:tab title="First Tab Title">
+        <h:outputText value= "Lorem"/>
+        ...More content for first tab
+    </p:tab>
+    <p:tab title="Second Tab Title">
+        <h:outputText value="Ipsum" />
+    </p:tab>
+    //any number of tabs
+</p:accordionPanel>
 </html>
