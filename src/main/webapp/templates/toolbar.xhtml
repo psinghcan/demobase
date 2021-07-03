@@ -17,10 +17,10 @@
         <p:button outcome="/pages/main" value="#{messages.toolbar_home}" icon="ui-icon-home" />
       </f:facet>
       <f:facet name="right">
-        <p:selectOneMenu value="#{localeBean.selectedLocale}" style="vertical-align:bottom;margin-right:10px">
-          <p:ajax update="@all" />
-          <f:selectItems value="#{localeBean.locales}" ></f:selectItems>
-        </p:selectOneMenu>
+<!--        <p:selectOneMenu value="#{localeBean.selectedLocale}" style="vertical-align:bottom;margin-right:10px">-->
+<!--          <p:ajax update="@all" />-->
+<!--          <f:selectItems value="#{localeBean.locales}" ></f:selectItems>-->
+<!--        </p:selectOneMenu>-->
         
         <p:button outcome="/login" value="#{messages.toolbar_login}" icon="ui-icon-key"
                   rendered="#{empty request.remoteUser}"/>
