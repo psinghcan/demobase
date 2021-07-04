@@ -1,16 +1,31 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3c.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-<h:head></h:head>
-<p:accordionPanel>
-    <p:tab title="First Tab Title">
-        <h:outputText value= "Lorem"/>
-        ...More content for first tab
-    </p:tab>
-    <p:tab title="Second Tab Title">
-        <h:outputText value="Ipsum" />
-    </p:tab>
-    //any number of tabs
-</p:accordionPanel>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+</h:head>
+<h:body>
+    <div class="card">
+        <h:form>
+            <p:growl id="growl"/>
+
+
+            <h5>Start the long running process </h5>
+            <p:commandButton value="Start" type="button"
+                             onclick="PF('pbAjaxLong').start();PF('startButton3').disable()"
+                             widgetVar="startButton3" actionListener="#{progressBarView.longRunning}" styleClass="p-mr-2"/>
+
+            <p:progressBar widgetVar="pbAjaxLong" ajax="true" value="#{progressBarView.progress2}"
+                           labelTemplate="{value}%" styleClass="p-mt-3" global="false" interval="500">
+                <p:ajax event="complete" listener="#{progressBarView.onComplete}" update="growl"
+                        oncomplete="PF('startButton3').enable()" />
+            </p:progressBar>
+
+        </h:form>
+    </div>
+
+</h:body>
 </html>
